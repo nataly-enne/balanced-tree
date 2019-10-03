@@ -9,6 +9,15 @@ public class Main {
         
         ArvoreBinariaBusca tree = new ArvoreBinariaBusca();
 
+        JFrame frame = new JFrame("Visualizador de ABB");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        ArvoreBinariaBuscaView view = new ArvoreBinariaBuscaView(tree);
+        frame.add(view);
+
+        frame.setVisible(true);
+
         tree.insert(50);
 
         tree.insert(18);

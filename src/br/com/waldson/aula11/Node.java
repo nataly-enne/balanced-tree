@@ -64,7 +64,6 @@ public class Node {
         return null;
     }
 
-
     public boolean balancedSides() {
         int limit = 1;
 
@@ -72,10 +71,10 @@ public class Node {
         int right_l = 0;
 
         if(left != null) {
-            left_l = 1 + left.road();
+            left_l = 1 + left.returnTheHeightFromANode();
         }
         if(right != null) {
-            right_l = 1 + right.road();
+            right_l = 1 + right.returnTheHeightFromANode();
         }
 
         if (Math.abs(left_l - right_l) > limit) {
@@ -96,15 +95,15 @@ public class Node {
         return balance_sides;
     }
 
-    public int road() {
+    public int returnTheHeightFromANode() {
         int left_l = 0;
         int right_l = 0;
 
         if(left != null) {
-            left_l = 1 + left.road();
+            left_l = 1 + left.returnTheHeightFromANode();
         }
         if(right != null) {
-            right_l = 1 + right.road();
+            right_l = 1 + right.returnTheHeightFromANode();
         }
 
         return Math.max(left_l, right_l);
